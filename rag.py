@@ -6,6 +6,8 @@ from phi.vectordb.qdrant import Qdrant
 from phi.embedder.ollama import OllamaEmbedder
 from phi.playground import Playground, serve_playground_app
 
+from .constants import PDF_URLS
+
 # Define the collection name for the vector database
 collection_name = "medical-research-index"
 
@@ -18,7 +20,7 @@ vector_db = Qdrant(
 
 # Define the knowledge base with a medical research PDF URL
 knowledge_base = PDFUrlKnowledgeBase(
-    urls=["https://s1cc232ef9981fc8b.jimcontent.com/download/version/1666002108/module/8094728862/name/2022%2C%20CURRENT%20Medical%20Diagnosis%20and%20Treatment-%20Original.pdf"],
+    urls=PDF_URLS,
     vector_db=vector_db,
 )
 
